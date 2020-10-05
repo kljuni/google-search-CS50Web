@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Search</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="advanced.css">
+    </head>
+    <body>
+        <div class="header">
+            <h2>Advanced Search</h2>
+            <h1 style="font-size: 2rem;">
+                <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+            </h1>
+            <div class="links">
+                <a href="index.html">Back</a>
+            </div>
+        </div>
+        <h2 class="desk">Advanced Search</h2>
+        <hr>
+        <div class="advanced_search">
+            <form action="https://google.com/search">
+                <div class="container mb-3 text-intro pad">Find pages with...</div>
+                <div class="container form-text">
+                    <div class="row">
+                        <div class="col-12 col-sm-3 pad">
+                            all these words:
+                        </div>
+                        <div class="col-12 col-sm pad">
+                            <input type="text">
+                        </div>                    
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-3 pad">
+                            this exact word or phrase:
+                        </div>
+                        <div class="col-12 col-sm pad">
+                            <input type="text">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-3 pad">
+                            any of these words:
+                        </div>
+                        <div class="col-12 col-sm pad">
+                            <input type="text">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-5 col-sm-3 pad">
+                            none of these words:
+                        </div>
+                        <div class="col-12 col-sm pad">
+                            <input type="text">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-5 col-sm-3 pad">
+                        </div>
+                        <div class="col-12 col-sm pad">
+                            <input type="hidden" name="tbm" value="isch">
+                            <div class="submit">
+                                <input type="submit" value="Advanced Search">
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="button_box">
+
+                </div>
+                
+            </form>
+        </div>
+
+        <script>
+            // When user enters characters into "search-text" the delete sign gets displayed
+            const displayX = () => {
+                let input = document.getElementById("search-text").value;
+                console.log(input)
+                let delete_sign = document.getElementById("delete-text").style;
+                (input.length > 0) ? delete_sign.display = "block" : delete_sign.display = "none";
+            }
+
+            // When user clicks delete sign, the text in "search-text" gets deleted
+            const delete_input = () => {
+                document.getElementById("search-text").value = "";
+                document.getElementById("delete-text").style.display = "none";
+            }
+        </script>
+    </body>
+</html>
